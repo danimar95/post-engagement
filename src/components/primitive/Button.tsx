@@ -11,7 +11,7 @@ const Button = ({
     <button
       type={isSubmit ? "submit" : "button"}
       disabled={disabled}
-      className={`btn btn-info text-white border-0 font-medium ${
+      className={`btn btn-info border-0 font-medium disabled:text-black ${
         extraClass && extraClass
       }`}
       onClick={onChange}

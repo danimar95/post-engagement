@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 const Input = ({
   placeholder,
   handleChange,
-  searchTerm,
+  value,
   extraClass,
   search = false,
   type = "text",
@@ -17,7 +17,7 @@ const Input = ({
       type={type}
       placeholder={placeholder}
       onChange={handleChange}
-      value={searchTerm}
+      value={value}
     />
     {search && <BsSearch className="absolute top-2 right-2 text-black"/>}
   </div>

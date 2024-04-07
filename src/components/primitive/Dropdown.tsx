@@ -1,7 +1,8 @@
+import { PropsWithChildren } from "react";
 import { DropdownProps } from "../../interfaces";
 import { FaAngleDown } from "react-icons/fa";
 
-const Dropdown = ({ hasIcon, text, options, extraClass }: DropdownProps) => {
+const Dropdown = ({ hasIcon, text, children, extraClass }: PropsWithChildren<DropdownProps>) => {
   return (
     <div className={`dropdown ${extraClass ? extraClass : ""}`}>
       <div
@@ -16,11 +17,7 @@ const Dropdown = ({ hasIcon, text, options, extraClass }: DropdownProps) => {
         tabIndex={0}
         className="p-2 shadow menu dropdown-content z-[1] bg-white text-blue-950 rounded-box py-0"
       >
-        {options.map((option) => (
-          <li>
-            <a>{option}</a>
-          </li>
-        ))}
+        {children}
       </ul>
     </div>
   );

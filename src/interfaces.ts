@@ -3,7 +3,7 @@ import { HTMLInputTypeAttribute, MouseEventHandler, SetStateAction } from "react
 
 export interface ButtonProps {
   children: React.ReactNode;
-  onChange: MouseEventHandler<HTMLButtonElement>;
+  onChange: any;
   disabled?: boolean;
   extraClass?: string;
   isSubmit?: boolean;
@@ -11,7 +11,8 @@ export interface ButtonProps {
 
 export interface InputProps {
   id: string;
-  searchTerm: string;
+  value: string;
+  name: string;
   placeholder: string;
   handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   extraClass?: string;
@@ -22,18 +23,50 @@ export interface InputProps {
 
 export interface ModalProps {
   id: string;
-  header: string;
-  content: string;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+export interface DropdownActionProps{
+  name: string;
+  action?: any;
 }
 
 export interface DropdownProps {
   text: string;
-  options: Array<string>
   hasIcon?: boolean;
   extraClass?: string;
 }
 
 export interface CheckboxTypes {
   name: string;
-  checked?: boolean;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}
+
+export interface DataProps {
+  checked: string[];
+  engagementData: EngagementProps[];
+  filteredData: EngagementProps[];
+  isRenaming: boolean;
+  currentItem: EngagementProps,
+  dataCount: string,
+}
+
+export interface EngagementProps {
+  name: string;
+  engagement: string;
+  acquired: number;
+  conversion: string;
+  id: string;
+  platform: "messenger" | "instagram";
+};
+
+export interface PlatformProps {
+  value: string;
+  label: string;
+}
+
+export interface EngagementCardProps {
+  setIsOpen: (isOpen: boolean) => void;
 }
