@@ -1,6 +1,6 @@
 # Dashboard of post engagement data
 
-This is a dashboard project created with ReactJS, Typescript, Tailwind, DaisyUI, Reacr-redux, Redux-toolkit and react-icons.
+This is a dashboard project created with ReactJS, Typescript, Tailwind, DaisyUI, React-redux, Redux-toolkit and react-icons. To mock the data it uses [Faker's](https://fakerjs.dev/) library.
 It allows the user to complete the CRUD methodds (Create, Read, Update and Delete) locally. It it not connected to an API so all the data will be stored locally and if the page refreshes it will be lost.
 
 
