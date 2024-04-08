@@ -1,18 +1,6 @@
 import { PropsWithChildren } from "react";
 import { FaAngleDown } from "react-icons/fa";
-
-interface SelectProps {
-  htmlFor: string;
-  label: string;
-  name: string;
-  value?: string;
-  disabled?: boolean;
-  required?: boolean;
-  placeholder: string;
-  extraClass?: string;
-  hasIcon?: boolean;
-  handeChange: any;
-}
+import { SelectProps } from "../../interfaces";
 
 const Select = ({
   htmlFor,
@@ -28,7 +16,7 @@ const Select = ({
   handeChange,
 }: PropsWithChildren<SelectProps>) => {
   return (
-    <label className="flex text-black rounded-3xl py-0.5 w-full bg-white" htmlFor={htmlFor} data-testid="select-label">
+    <label className="flex text-black rounded-3xl py-0.5 w-full bg-transparent" htmlFor={htmlFor} data-testid="select-label">
       <span className="" data-testid="select-caption">
         {label && <span className="">{label}</span>}
       </span>
@@ -42,7 +30,7 @@ const Select = ({
           onChange={handeChange}
           value={value}
         >
-          <option value={placeholder} disabled className="text-black" selected={true}>
+          <option value={placeholder} disabled className="text-black" defaultChecked>
             {placeholder}
             {hasIcon && <FaAngleDown />}
           </option>

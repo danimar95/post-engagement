@@ -92,7 +92,7 @@ const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
                         label=""
                         htmlFor="platform"
                         name={platform}
-                        handeChange={(e: React.FormEvent<HTMLInputElement>) =>
+                        handeChange={(e) =>
                           setPlatform(e.currentTarget.value)
                         }
                       >

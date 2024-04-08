@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { faker } from '@faker-js/faker';
 import Button from "./components/primitive/Button";
 import Input from "./components/primitive/Input";
 import Dropdown from "./components/primitive/Dropdown";
@@ -26,15 +25,14 @@ const App = () => {
   const countOptions = [
     { value: "2" },
     { value: "5" },
+    { value: "7" },
     { value: "10" },
-    { value: "15" },
   ];
 
   const setCount = (count: string) => {
-    setSearchTerm('');
+    setSearchTerm("");
     dispatch(setDataCount(count));
-  }
-
+  };
 
   const deleteChecked = () => {
     dispatch(deleteSelected());
@@ -54,6 +52,7 @@ const App = () => {
       <TopBar />
       <div className="flex">
         <Drawer />
+
         <div className="flex flex-col justify-center items-center w-full h-full py-5">
           <div className="flex w-11/12 justify-between pb-4">
             <div className="w-2/12 text-black flex items-center font-medium">
@@ -85,7 +84,9 @@ const App = () => {
                   label=""
                   name={dataCount}
                   value={dataCount}
-                  handeChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCount(e.target.value)}
+                  handeChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                    setCount(e.target.value)
+                  }
                 >
                   {countOptions.map((option, index) => (
                     <option
@@ -113,6 +114,7 @@ const App = () => {
           <EngagementCard setIsOpen={setIsOpen} />
         </div>
       </div>
+
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} id="modal" />
     </div>
   );

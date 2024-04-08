@@ -1,9 +1,9 @@
+import { ChangeEvent, ChangeEventHandler, HTMLInputTypeAttribute, MouseEventHandler, SetStateAction } from "react";
 import { Dispatch } from "@reduxjs/toolkit";
-import { HTMLInputTypeAttribute, MouseEventHandler, SetStateAction } from "react";
 
 export interface ButtonProps {
   children: React.ReactNode;
-  onChange: any;
+  onChange: MouseEventHandler<HTMLButtonElement>
   disabled?: boolean;
   extraClass?: string;
   isSubmit?: boolean;
@@ -14,10 +14,9 @@ export interface InputProps {
   value: string;
   name: string;
   placeholder: string;
-  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   extraClass?: string;
   search?: boolean;
-  setSearchTerm?: Dispatch<SetStateAction<any>>;
   type?: HTMLInputTypeAttribute;
 }
 
@@ -25,11 +24,6 @@ export interface ModalProps {
   id: string;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-}
-
-export interface DropdownActionProps{
-  name: string;
-  action?: any;
 }
 
 export interface DropdownProps {
@@ -69,4 +63,17 @@ export interface PlatformProps {
 
 export interface EngagementCardProps {
   setIsOpen: (isOpen: boolean) => void;
+}
+
+export interface SelectProps {
+  htmlFor: string;
+  label: string;
+  name: string;
+  value?: string;
+  disabled?: boolean;
+  required?: boolean;
+  placeholder: string;
+  extraClass?: string;
+  hasIcon?: boolean;
+  handeChange: ChangeEventHandler<HTMLSelectElement>;
 }

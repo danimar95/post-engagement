@@ -16,7 +16,7 @@ const initialState: DataProps = {
     id: "",
     platform: "messenger",
   },
-  dataCount : "10"
+  dataCount : "5"
 };
 const todosSlice = createSlice({
   name: "data",
